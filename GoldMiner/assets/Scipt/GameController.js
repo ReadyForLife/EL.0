@@ -35,7 +35,11 @@ cc.Class({
         handle: {
             default: null,
             type: cc.Node
-        }
+        },
+        StoneSet: {
+            default: null,
+            type:cc.Node
+        },
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -49,7 +53,7 @@ cc.Class({
     },
     spawnNewStone: function () {
         var newStone = cc.instantiate(this.Stone);
-        this.node.addChild(newStone);
+        this.StoneSet.addChild(newStone);
         newStone.setPosition(this.getStoneNewPosition());
         newStone.setContentSize(this.getStoneSize());
     },
